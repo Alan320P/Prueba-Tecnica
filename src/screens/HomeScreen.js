@@ -8,7 +8,7 @@ import { usePersonStorage } from "../hooks/usePersonStorage";
 import styles from "../styles/HomeScreen.styles";
 
 export default function HomeScreen() {
-  const { personas, addPerson, updatePerson, removePerson } = usePersonStorage();
+  const { personas, addPerson, updatePerson, removePerson, removePhoto } = usePersonStorage();
   const [formVisible, setFormVisible] = useState(false);
   const [detailVisible, setDetailVisible] = useState(false);
   const [selectedPerson, setSelectedPerson] = useState(null);
@@ -36,6 +36,11 @@ export default function HomeScreen() {
     }
     setFormVisible(false);
     setSelectedPerson(null);
+  };
+
+  const handleDeletePhoto = (id) => {
+    removePhoto(id);  
+    setSelectedPerson((prev) => ({ ...prev, foto: null }));  
   };
 
   return (
@@ -76,20 +81,19 @@ export default function HomeScreen() {
         </TouchableOpacity>
       )}
 
-      {/* Modal de formulario */}
       <PersonFormModal
         visible={formVisible}
         onClose={() => { setFormVisible(false); setSelectedPerson(null); }}
         onSave={guardarPersona}
         persona={selectedPerson}
       />
-
-      {/* Modal de detalle */}
+     
       <PersonDetailModal
         visible={detailVisible}
         persona={selectedPerson}
         onClose={() => setDetailVisible(false)}
         onEdit={editarPersona}
+        onDeletePhoto={handleDeletePhoto}  
       />
     </SafeAreaView>
   );

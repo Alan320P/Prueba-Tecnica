@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, View, Text, Image, Alert } from "react-native";
 import styles from "../styles/PersonCard.styles";
 
-export default function PersonCard({ persona, onPress, onDelete }) {
+export default function PersonCard({ persona, onPress, onDelete, onDeletePhoto }) {
   const handleLongPress = () => {
     Alert.alert(
       "Eliminar persona",
@@ -19,7 +19,7 @@ export default function PersonCard({ persona, onPress, onDelete }) {
       style={styles.card}
       onPress={() => onPress(persona)}
       onLongPress={handleLongPress}
-      activeOpacity={0.8} 
+      activeOpacity={0.8}
     >
       {persona.foto ? (
         <Image source={{ uri: persona.foto }} style={styles.image} />

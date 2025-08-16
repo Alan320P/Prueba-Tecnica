@@ -25,5 +25,12 @@ export const usePersonStorage = () => {
   const removePerson = async (id) =>
     save(personas.filter(p => p.id !== id));
 
-  return { personas, addPerson, updatePerson, removePerson };
+  const removePhoto = async (id) => {
+    const updatedList = personas.map(p =>
+      p.id === id ? { ...p, foto: null } : p
+    );
+    await save(updatedList);
+  };
+
+  return { personas, addPerson, updatePerson, removePerson, removePhoto };
 };

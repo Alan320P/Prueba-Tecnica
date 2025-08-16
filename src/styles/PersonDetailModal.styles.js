@@ -45,6 +45,9 @@ export default StyleSheet.create({
   editButton: {
     backgroundColor: "#6a82fb",
   },
+  deleteButton: {      
+    backgroundColor: "#ff4d4d",
+  },
   closeButton: {
     backgroundColor: "#e0e0e0",
   },
