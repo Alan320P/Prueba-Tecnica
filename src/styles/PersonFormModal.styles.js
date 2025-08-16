@@ -1,0 +1,82 @@
+import { StyleSheet } from "react-native";
+
+export default StyleSheet.create({
+  modalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.3)",
+  },
+  modalContent: {
+    width: "80%",
+    backgroundColor: "#fff",
+    paddingTop: 30,
+    paddingHorizontal: 20,
+    paddingBottom: 20,
+    borderRadius: 20,
+    elevation: 8,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 10,
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 22,
+    fontWeight: "700",
+    marginBottom: 16,
+    textAlign: "center",
+    color: "#333",
+  },
+  photoCircle: {
+    width: 100,
+    height: 100,
+    borderRadius: 50,
+    backgroundColor: "#f0f0f0",
+    justifyContent: "center",
+    alignItems: "center",
+    overflow: "hidden",
+    borderWidth: 2,
+    borderColor: "#ccc",
+    marginBottom: 16,
+  },
+  photoImage: {
+    width: "100%",
+    height: "100%",
+    borderRadius: 50,
+  },
+  photoText: {
+    color: "#888",
+    textAlign: "center",
+    fontSize: 12,
+  },
+  input: {
+    borderWidth: 1,
+    borderColor: "#ddd",
+    borderRadius: 12,
+    padding: 12,
+    marginBottom: 12,
+    backgroundColor: "#f9f9f9",
+    width: "100%",
+  },
+  button: {
+    width: "100%",
+    paddingVertical: 12,
+    borderRadius: 12,
+    marginVertical: 6,
+    alignItems: "center",
+    justifyContent: "center",
+    elevation: 2,
+  },
+  saveButton: {
+    backgroundColor: "#6a82fb",
+  },
+  cancelButton: {
+    backgroundColor: "#e0e0e0",
+  },
+  buttonText: {
+    color: "#fff",
+    fontWeight: "600",
+    fontSize: 16,
+  },
+});
