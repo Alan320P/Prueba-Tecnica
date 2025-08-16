@@ -14,8 +14,8 @@ export default function HomeScreen() {
   const [selectedPerson, setSelectedPerson] = useState(null);
 
   const abrirNuevoFormulario = () => {
-    setSelectedPerson(null); // Limpiar cualquier persona seleccionada
-    setFormVisible(true);     // Abrir modal
+    setSelectedPerson(null); 
+    setFormVisible(true);   
   };
 
   const abrirDetalle = (persona) => {

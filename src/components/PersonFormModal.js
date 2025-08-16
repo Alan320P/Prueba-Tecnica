@@ -8,7 +8,6 @@ export default function PersonFormModal({ visible, onClose, onSave, persona }) {
   const [apellido, setApellido] = useState("");
   const [foto, setFoto] = useState(null);
 
-  // Reiniciar campos cada vez que se abra el modal o cambie la persona
   useEffect(() => {
     if (visible) {
       if (persona) {

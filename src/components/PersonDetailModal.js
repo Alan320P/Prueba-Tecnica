@@ -34,7 +34,6 @@ export default function PersonDetailModal({ visible, persona, onClose, onEdit, o
             <Text style={styles.buttonText}>Editar</Text>
           </TouchableOpacity>
 
-          {/* Solo mostrar el botón para eliminar la foto si existe */}
           {persona.foto && (
             <TouchableOpacity style={[styles.button, styles.deleteButton]} onPress={handleDeletePhoto}>
               <Text style={styles.buttonText}>Eliminar Foto</Text>
