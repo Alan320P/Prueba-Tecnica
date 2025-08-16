@@ -14,8 +14,8 @@ export default function HomeScreen() {
   const [selectedPerson, setSelectedPerson] = useState(null);
 
   const abrirNuevoFormulario = () => {
-    setSelectedPerson(null); 
-    setFormVisible(true);
+    setSelectedPerson(null); // Limpiar cualquier persona seleccionada
+    setFormVisible(true);     // Abrir modal
   };
 
   const abrirDetalle = (persona) => {
@@ -39,8 +39,8 @@ export default function HomeScreen() {
   };
 
   const handleDeletePhoto = (id) => {
-    removePhoto(id);  
-    setSelectedPerson((prev) => ({ ...prev, foto: null }));  
+    removePhoto(id);
+    setSelectedPerson((prev) => ({ ...prev, foto: null }));
   };
 
   return (
@@ -87,13 +87,13 @@ export default function HomeScreen() {
         onSave={guardarPersona}
         persona={selectedPerson}
       />
-     
+
       <PersonDetailModal
         visible={detailVisible}
         persona={selectedPerson}
         onClose={() => setDetailVisible(false)}
         onEdit={editarPersona}
-        onDeletePhoto={handleDeletePhoto}  
+        onDeletePhoto={handleDeletePhoto}
       />
     </SafeAreaView>
   );

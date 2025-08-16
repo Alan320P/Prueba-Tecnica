@@ -1,22 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Modal, View, Text, TextInput, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { Modal, View, Text, TextInput, Image, TouchableOpacity } from "react-native";
 import { launchImageLibrary } from "react-native-image-picker";
-import styles from "../styles/PersonFormModal.styles"; 
+import styles from "../styles/PersonFormModal.styles";
 
 export default function PersonFormModal({ visible, onClose, onSave, persona }) {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [foto, setFoto] = useState(null);
 
+  // Reiniciar campos cada vez que se abra el modal o cambie la persona
   useEffect(() => {
-    if (persona) {
-      setNombre(persona.nombre);
-      setApellido(persona.apellido);
-      setFoto(persona.foto);
-    } else {
-      setNombre(""); setApellido(""); setFoto(null);
+    if (visible) {
+      if (persona) {
+        setNombre(persona.nombre || "");
+        setApellido(persona.apellido || "");
+        setFoto(persona.foto || null);
+      } else {
+        setNombre("");
+        setApellido("");
+        setFoto(null);
+      }
     }
-  }, [persona]);
+  }, [persona, visible]);
 
   const seleccionarFoto = async () => {
     const result = await launchImageLibrary({ mediaType: "photo", quality: 0.7 });
